@@ -52,3 +52,4 @@ nnoremap <leader>q :quit<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <silent> <Leader>+ :vertical resize =5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>s :update <CR>
