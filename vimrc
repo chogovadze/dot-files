@@ -7,7 +7,7 @@ set expandtab
 set number
 set noswapfile
 set incsearch
-
+set wildmenu
 let mapleader = " "
 
 filetype indent on
@@ -29,7 +29,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
-
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 colorscheme gruvbox
@@ -53,3 +53,14 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <silent> <Leader>+ :vertical resize =5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>s :update <CR>
+
+" syntastic commands
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+nnoremap <leader>ee  :SyntasticToggleMode<CR>
+nnoremap <leader>er  :SyntasticCheck<CR>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
