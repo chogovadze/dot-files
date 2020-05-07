@@ -24,12 +24,14 @@ set cmdheight=2
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 colorscheme gruvbox
