@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -72,6 +71,8 @@ plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -100,3 +101,6 @@ source $ZSH/oh-my-zsh.sh
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# added by Miniconda3 3.16.0 installer
+export PATH="/home/pi/miniconda3/bin:$PATH"
