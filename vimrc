@@ -43,18 +43,22 @@ let g:ycm_semantic_triggers = {
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
-
-nnoremap  <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
+" General remapping
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :quit<CR>
-nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <Leader>w :update <CR>
 nnoremap <silent> <Leader>+ :vertical resize =5<CR>
 nnoremap <silent> <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>s :update <CR>
+
+" Plugin specific remapping
+nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fe :Ag<CR>
 
 " syntastic commands
 set statusline+=%#warningmsg#
