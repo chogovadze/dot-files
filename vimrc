@@ -49,10 +49,11 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :quit<CR>
-nnoremap <Leader>w :update <CR>
+nnoremap <leader>w :update <CR>
 nnoremap <leader>d :lcd %:p:h<CR>
-nnoremap <silent> <Leader>+ :vertical resize =5<CR>
-nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <leader>+ :vertical resize =5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>b <C-^>
 
 " Plugin specific remapping
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
