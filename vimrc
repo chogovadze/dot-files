@@ -4,10 +4,11 @@ set cmdheight=2
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set number
 set noswapfile
 set incsearch
 set wildmenu
+set number relativenumber
+set nu rnu
 let mapleader = " "
 
 filetype indent on
