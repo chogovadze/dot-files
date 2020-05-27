@@ -72,7 +72,7 @@ plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 
-
+alias tmux='tmux -2'
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
