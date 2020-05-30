@@ -31,8 +31,8 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
-Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdcommenter'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 colorscheme gruvbox
@@ -62,16 +62,17 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fe :Ag<CR>
-
-" syntastic commands
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-nnoremap <leader>ee :SyntasticToggleMode<CR>
-nnoremap <leader>er :SyntasticCheck<CR>
-nnoremap <leader>ew :lnext<CR>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0 
-let g:syntastic_check_on_open = 1 
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
+nmap <silent> <leader>ew <Plug>(ale_previous_wrap)
+nmap <silent> <C-j>er <Plug>(ale_next_wrap)
+"" syntastic commands
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"nnoremap <leader>ee :SyntasticToggleMode<CR>
+"nnoremap <leader>er :SyntasticCheck<CR>
+"nnoremap <leader>ew :lnext<CR>
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0 
+"let g:syntastic_check_on_open = 1 
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_python_checkers = ['flake8']

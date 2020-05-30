@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export TERM="xterm-256color"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load --- if set to "random", it will
@@ -72,6 +72,8 @@ plugins=(git virtualenv zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 
+alias tmux='tmux -2'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -99,7 +101,3 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# added by Miniconda3 3.16.0 installer
-export PATH="/home/pi/miniconda3/bin:$PATH"
