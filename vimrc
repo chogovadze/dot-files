@@ -33,6 +33,7 @@ Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 colorscheme gruvbox
@@ -55,6 +56,14 @@ nnoremap <leader>d :lcd %:p:h<CR>
 nnoremap <leader>+ :vertical resize =5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
 nnoremap <leader>b <C-^>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
 
 " Plugin specific remapping
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -63,7 +72,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fe :Ag<CR>
 nmap <silent> <leader>ew <Plug>(ale_previous_wrap)
-nmap <silent> <C-j>er <Plug>(ale_next_wrap)
+nmap <silent> <leader>er <Plug>(ale_next_wrap)
 "" syntastic commands
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
