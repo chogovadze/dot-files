@@ -48,9 +48,9 @@ let g:ycm_semantic_triggers = {
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Airlines
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_statusline_ontop=1       
-let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#enabled=0
+let g:airline_statusline_ontop=0       
+let g:airline#extensions#tabline#formatter='default'
 " General remapping
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
