@@ -45,8 +45,8 @@ colorscheme gruvbox
 set background=dark
 
 let g:ycm_semantic_triggers = {
-	\   'python': [ 're!\w{2}' ]
-	\ }
+    \   'python': [ 're!\w{2}' ]
+    \ }
 
 let g:ycm_autoclose_preview_window_after_completion=1
 
@@ -75,7 +75,7 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
-" Plugin specific remapping
+"Plugin specific remapping
 nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeShow<CR>
