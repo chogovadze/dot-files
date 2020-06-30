@@ -34,8 +34,10 @@ Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
-Plug 'bling/vim-bufferline'
-
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 colorscheme gruvbox
@@ -49,7 +51,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 
 " Airlines
 let g:airline#extensions#tabline#enabled=0
-let g:airline_statusline_ontop=0       
+let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#formatter='default'
 " General remapping
 nnoremap <leader>h :wincmd h<CR>
@@ -87,7 +89,7 @@ nmap <silent> <leader>er <Plug>(ale_next_wrap)
 "nnoremap <leader>er :SyntasticCheck<CR>
 "nnoremap <leader>ew :lnext<CR>
 "let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0 
+"let g:syntastic_auto_loc_list = 0
 "let g:syntastic_check_on_open = 1 
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_python_checkers = ['flake8']
