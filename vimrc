@@ -53,7 +53,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " Airlines
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled=1
-let g:airline_statusline_ontop=1
+let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#formatter='default'
 " General remapping
 nnoremap <leader>h :wincmd h<CR>
