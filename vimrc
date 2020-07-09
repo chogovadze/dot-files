@@ -44,6 +44,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 
+"YCM
 let g:ycm_semantic_triggers = {
     \   'python': [ 're!\w{2}' ]
     \ }
@@ -53,13 +54,19 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " Airlines
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_splits = 0
 let g:airline_statusline_ontop=0
 let g:airline#extensions#tabline#formatter='default'
 " General remapping
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+"nnoremap <leader>h :wincmd h<CR>
+"nnoremap <leader>j :wincmd j<CR>
+"nnoremap <leader>k :wincmd k<CR>
+"nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader><Left> :wincmd h<CR>
+nnoremap <leader><Down> :wincmd j<CR>
+nnoremap <leader><Up> :wincmd k<CR>
+nnoremap <leader><Right> :wincmd l<CR>
 nnoremap <leader>q :quit<CR>
 nnoremap <leader>w :update <CR>
 nnoremap <leader>d :lcd %:p:h<CR>
