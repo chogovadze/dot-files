@@ -9,6 +9,8 @@ set incsearch
 set wildmenu
 set number relativenumber
 set nu rnu
+set cursorline
+set signcolumn=yes
 let mapleader = " "
 
 set encoding=UTF-8
