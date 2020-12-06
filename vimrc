@@ -9,6 +9,8 @@ set incsearch
 set wildmenu
 set number relativenumber
 set nu rnu
+set cursorline
+set signcolumn=yes
 let mapleader = " "
 
 set encoding=UTF-8
@@ -21,7 +23,6 @@ set undofile
 set colorcolumn=79
 set noswapfile
 set cmdheight=2
-set cursorline
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
