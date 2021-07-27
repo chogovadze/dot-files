@@ -3,6 +3,7 @@ syntax enable
 set cmdheight=2
 set tabstop=4
 set shiftwidth=4
+set backspace=2
 set expandtab
 set noswapfile
 set incsearch
@@ -42,9 +43,12 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 colorscheme gruvbox
@@ -90,6 +94,8 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 "Plugin specific remapping
+"UltiSnips
+let g:UltiSnipsExpandTrigger = "§"
 "nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>u :UndotreeShow<CR>
