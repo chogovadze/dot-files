@@ -44,10 +44,12 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf.vim'
 Plug 'matze/vim-move'
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'morhetz/gruvbox'
+Plug 'psliwka/vim-smoothie'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
@@ -61,11 +63,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'davidhalter/jedi-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/goyo.vim'
+Plug 'ervandew/supertab'
 call plug#end()
 
 colorscheme gruvbox
@@ -80,14 +84,6 @@ set background=dark
 
 "let g:ycm_autoclose_preview_window_after_completion=1
 
-" Airlines
-let g:airline_theme='base16'
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline_statusline_ontop=0
-let g:airline#extensions#tabline#formatter='default'
-let g:airline_powerline_fonts = 1
 " General remapping
 "nnoremap <leader>h :wincmd h<CR>
 "nnoremap <leader>j :wincmd j<CR>
@@ -97,7 +93,7 @@ nnoremap <leader><Left> :wincmd h<CR>
 nnoremap <leader><Down> :wincmd j<CR>
 nnoremap <leader><Up> :wincmd k<CR>
 nnoremap <leader><Right> :wincmd l<CR>
-nnoremap <leader>w :quit<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>s :update <CR>
 nnoremap <leader>d :lcd %:p:h<CR>
 nnoremap <leader>= :vertical resize +15<CR>
@@ -112,40 +108,73 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
-"Plugin specific remapping
-"" Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Buffer mapping
+" nnoremap <Leader>l :ls<CR>
+nnoremap <leader>w :bw<CR>
+nnoremap <Leader>g :e#<CR>
+"nnoremap <Leader>[ :bp<CR>
+"nnoremap <Leader>] :bn<CR>
+"nnoremap <Leader>1 :1b<CR>
+"nnoremap <Leader>2 :2b<CR>
+"nnoremap <Leader>3 :3b<CR>
+"nnoremap <Leader>4 :4b<CR>
+"nnoremap <Leader>5 :5b<CR>
+"nnoremap <Leader>6 :6b<CR>
+"nnoremap <Leader>7 :7b<CR>
+"nnoremap <Leader>8 :8b<CR>
+"nnoremap <Leader>9 :9b<CR>
+"nnoremap <Leader>0 :10b<CR>
+"" Plugin specific remapping
 
+
+" Airlines
+let g:airline_theme='base16'
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline_statusline_ontop = 0
+let g:airline#extensions#tabline#formatter='default'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
+nmap <leader>[ <Plug>AirlineSelectPrevTab
+nmap <leader>] <Plug>AirlineSelectNextTab
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger = "§"
 "nnoremap <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+" NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
+
 
 " Fuzzy
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fe :Ag<CR>
 
 " ALE
-nmap <silent>]g <Plug>(ale_previous_wrap)
-nmap <silent>[g <Plug>(ale_next_wrap)
+nmap <silent>[g <Plug>(ale_previous_wrap)
+nmap <silent>]g <Plug>(ale_next_wrap)
 let g:ale_linters={'python': ['flake8']}
 let g:ale_sign_column_always = 1
 let g:ale_floating_preview = 1
 let g:ale_hover_to_floating_preview = 1
 let g:ale_completion_enabled = 1
 
-" JEDI
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_stubs_command = "<leader>as"
-let g:jedi#goto_definitions_command = "gd"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
+" Goyo
+nnoremap <leader>m :Goyo<CR> 
+let g:goyo_width = 120
