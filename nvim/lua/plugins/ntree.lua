@@ -23,7 +23,7 @@ require'nvim-tree'.setup {
     }
   },
   update_focused_file = {
-    enable      = false,
+    enable      = true,
     update_cwd  = false,
     ignore_list = {}
   },
@@ -41,11 +41,11 @@ require'nvim-tree'.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 45,
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
+    auto_resize = true,
     mappings = {
      custom_only = false,
       list = {}

@@ -11,8 +11,6 @@
 # see this wiki page for information:
 #  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
 #
- sudo yabai --load-sa
- yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          on
@@ -49,14 +47,3 @@ yabai -m config top_padding                  30
 yabai -m config bottom_padding               48
 yabai -m config left_padding                 24
 yabai -m config right_padding                24
-# knazarov
-yabai -m space 1 --label free 
-yabai -m space 2 --label web
-yabai -m space 3 --label code
-yabai -m space 4 --label misc 
-yabai -m space 5 --label comedia
-yabai -m space 6 --label notepad
-yabai -m space 7 --label journal
-yabai -m space 8 --label freebis
-yabai -m space 9 --label other
-echo "yabai configuration loaded.."
